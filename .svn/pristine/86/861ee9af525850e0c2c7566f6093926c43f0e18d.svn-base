@@ -1,0 +1,20 @@
+package com.huachu.core.dao;
+
+import com.huachu.domain.TUser;
+import org.apache.ibatis.annotations.Param;
+
+public interface TUserMapper {
+    int deleteByPrimaryKey(Integer userid);
+
+    int insert(TUser record);
+
+    int insertSelective(TUser record);
+
+    TUser selectByPrimaryKey(Integer userid);
+
+    int updateByPrimaryKeySelective(TUser record);
+
+    int updateByPrimaryKey(TUser record);
+
+    TUser queryByUsername(@Param("username") String username);
+}

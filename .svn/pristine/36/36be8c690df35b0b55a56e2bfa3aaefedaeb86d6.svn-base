@@ -1,0 +1,22 @@
+package com.huachu.core.dao;
+
+import com.github.pagehelper.Page;
+import com.huachu.domain.TRecyclingList;
+import com.huachu.dto.request.query.QueryRecyclingListReqDTO;
+import com.huachu.dto.response.RecyclingListRespDTO;
+
+public interface TRecyclingListMapper {
+    int deleteByPrimaryKey(String recyclingNo);
+
+    int insert(TRecyclingList record);
+
+    int insertSelective(TRecyclingList record);
+
+    TRecyclingList selectByPrimaryKey(String recyclingNo);
+
+    int updateByPrimaryKeySelective(TRecyclingList record);
+
+    int updateByPrimaryKey(TRecyclingList record);
+    
+    Page<RecyclingListRespDTO> queryList(QueryRecyclingListReqDTO reqDto);
+}

@@ -1,0 +1,19 @@
+package com.huachu.api.user;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.huachu.common.web.AbstractApi;
+
+import io.swagger.annotations.Api;
+
+/**
+ * @author Administrator
+ * @DATE 2018/8/29
+ */
+@Api(description = "系统用户接口")
+@RestController
+@RequestMapping("/user")
+public class UserApi extends AbstractApi {
+
+}

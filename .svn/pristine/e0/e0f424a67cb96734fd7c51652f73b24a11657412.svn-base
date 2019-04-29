@@ -1,0 +1,10 @@
+classPath=D:\\repository\\mysql\\mysql-connector-java\\8.0.11\\mysql-connector-java-8.0.11.jar
+
+driverClass=com.mysql.jdbc.Driver
+connectionURL=jdbc:mysql://127.0.0.1:3306/huachu?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+userId=root
+password=Root123
+modelPackage=com.huachu.domain
+sqlMapperPackage=mapper
+daoMapperPackage=com.huachu.core.dao
+tablename=t_recycling_accessory

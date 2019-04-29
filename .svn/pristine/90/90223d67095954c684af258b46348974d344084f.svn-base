@@ -1,0 +1,38 @@
+package com.huachu.common.constants;
+
+/**
+ * @author Administrator
+ */
+public class Constant {
+
+	/**
+	 * jwt
+	 */
+	public static final String JWT_ID = "jwt_crm";
+	public static final String JWT_SECRET = "7786df7fc3a34e26a61c034d5ec8245d";
+	public static final int JWT_TTL = 5*60*60*1000;
+
+	public static final String ACCESS_TOKEN = "token";
+	public static final String USER_CONTEXT = "USER_CONTEXT";
+
+	/**
+	 * 超级管理员
+	 */
+	public static final Integer ROLE_ADMIN = 100;
+
+
+	/**
+	 * 性别：1-男，2-女
+	 */
+	public static final Short MALE = 1;
+	public static final Short FEMALE = 2;
+
+	/**
+	 * 菜单类型：0-目录，1-菜单，2-按钮
+	 */
+	public static final Short MENU_CATALOG = 0;
+	public static final Short MENU_LINK = 1;
+	public static final Short MENU_BTN = 2;
+
+
+}

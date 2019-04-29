@@ -1,0 +1,27 @@
+package com.huachu.core.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.Page;
+import com.huachu.core.dao.TAdminRoleMapper;
+import com.huachu.domain.TAdminRole;
+import com.huachu.dto.request.query.QueryAdminRoleReqDTO;
+import com.huachu.dto.response.AdminRoleRespDTO;
+
+@Service
+public class AdminRoleService {
+
+	@Autowired
+	TAdminRoleMapper adminRoleMapper;
+	
+	public List<TAdminRole> queryAllRoles() {
+		return adminRoleMapper.queryAllRoles();
+	}
+	
+	public Page<AdminRoleRespDTO> queryList(QueryAdminRoleReqDTO reqDto) {
+		return adminRoleMapper.queryListByPage(reqDto);
+	}
+}

@@ -1,0 +1,41 @@
+package com.huachu.core.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.github.pagehelper.Page;
+import com.huachu.domain.TRecyclingList;
+import com.huachu.dto.request.query.QueryRecyclingListReqDTO;
+import com.huachu.dto.response.RecyclingListRespDTO;
+
+public interface TRecyclingListMapper {
+    int deleteByPrimaryKey(String recyclingNo);
+
+    int insert(TRecyclingList record);
+
+    int insertSelective(TRecyclingList record);
+
+    TRecyclingList selectByPrimaryKey(String recyclingNo);
+
+    int updateByPrimaryKeySelective(TRecyclingList record);
+
+    int updateByPrimaryKey(TRecyclingList record);
+    
+    Page<RecyclingListRespDTO> queryList(@Param("condition") QueryRecyclingListReqDTO reqDto);
+    
+    /**
+     * 批量查询可派单的回收单信息
+     * @param recyclingNoList
+     * @return
+     */
+    List<TRecyclingList> selectByPrimaryKeyList(List<String> recyclingNoList);
+    
+    /**
+     * 更新回收单的派单记录
+     * @param dispatchId
+     * @param recyclingNo
+     * @return
+     */
+    int updateDispatchRecyclingList(@Param("dispatchId") Long dispatchId, @Param("recyclingNo") String recyclingNo);
+}

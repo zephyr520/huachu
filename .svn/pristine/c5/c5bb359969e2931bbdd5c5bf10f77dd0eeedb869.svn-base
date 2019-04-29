@@ -1,0 +1,27 @@
+package com.huachu.core.dao;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.huachu.domain.TRecyclingAccessory;
+
+public interface TRecyclingAccessoryMapper {
+    int deleteByPrimaryKey(Long id);
+
+    int insert(TRecyclingAccessory record);
+
+    int insertSelective(TRecyclingAccessory record);
+
+    TRecyclingAccessory selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(TRecyclingAccessory record);
+
+    int updateByPrimaryKey(TRecyclingAccessory record);
+    
+    /***
+     * 更新配件的派单信息
+     * @param accessoryRecyclingUserId
+     * @param recyclingNo
+     * @return
+     */
+    int updateDispatchRecyclingAccessory(@Param("accessoryRecyclingUserId") Integer accessoryRecyclingUserId, @Param("recyclingNo") String recyclingNo);
+}

@@ -1,0 +1,20 @@
+package com.huachu.core.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.Page;
+import com.huachu.core.dao.TRecyclingAccessoryMapper;
+import com.huachu.dto.request.query.QueryRecyclingAccessoryReqDTO;
+import com.huachu.dto.response.RecyclingAccessoryRespDTO;
+
+@Service
+public class RecyclingAccessoryService {
+
+	@Autowired
+	TRecyclingAccessoryMapper recyclingAccessoryMapper;
+	
+	public Page<RecyclingAccessoryRespDTO> queryList(QueryRecyclingAccessoryReqDTO reqDto) {
+		return recyclingAccessoryMapper.queryList(reqDto);
+	}
+}

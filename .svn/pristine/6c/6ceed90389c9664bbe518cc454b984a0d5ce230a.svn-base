@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huachu.core.dao.TAdminMenuMapper">
+  <resultMap id="BaseResultMap" type="com.huachu.domain.TAdminMenu">
+    <id column="menu_id" jdbcType="INTEGER" property="menuId" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="menu_url" jdbcType="VARCHAR" property="menuUrl" />
+    <result column="menu_icon" jdbcType="VARCHAR" property="menuIcon" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="permit_identifier" jdbcType="VARCHAR" property="permitIdentifier" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="order_num" jdbcType="SMALLINT" property="orderNum" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    menu_id, menu_name, menu_url, menu_icon, type, permit_identifier, parent_id, order_num, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_admin_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_admin_menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.huachu.domain.TAdminMenu">
+    insert into t_admin_menu (menu_id, menu_name, menu_url, 
+      menu_icon, type, permit_identifier, 
+      parent_id, order_num, create_time
+      )
+    values (#{menuId,jdbcType=INTEGER}, #{menuName,jdbcType=VARCHAR}, #{menuUrl,jdbcType=VARCHAR}, 
+      #{menuIcon,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{permitIdentifier,jdbcType=VARCHAR}, 
+      #{parentId,jdbcType=INTEGER}, #{orderNum,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.huachu.domain.TAdminMenu">
+    insert into t_admin_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuId != null">
+        menu_id,
+      </if>
+      <if test="menuName != null">
+        menu_name,
+      </if>
+      <if test="menuUrl != null">
+        menu_url,
+      </if>
+      <if test="menuIcon != null">
+        menu_icon,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="permitIdentifier != null">
+        permit_identifier,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="orderNum != null">
+        order_num,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuId != null">
+        #{menuId,jdbcType=INTEGER},
+      </if>
+      <if test="menuName != null">
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null">
+        #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuIcon != null">
+        #{menuIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="permitIdentifier != null">
+        #{permitIdentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huachu.domain.TAdminMenu">
+    update t_admin_menu
+    <set>
+      <if test="menuName != null">
+        menu_name = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null">
+        menu_url = #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="menuIcon != null">
+        menu_icon = #{menuIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="permitIdentifier != null">
+        permit_identifier = #{permitIdentifier,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNum != null">
+        order_num = #{orderNum,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huachu.domain.TAdminMenu">
+    update t_admin_menu
+    set menu_name = #{menuName,jdbcType=VARCHAR},
+      menu_url = #{menuUrl,jdbcType=VARCHAR},
+      menu_icon = #{menuIcon,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      permit_identifier = #{permitIdentifier,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      order_num = #{orderNum,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  
+  <select id="queryAllMenus" resultMap="BaseResultMap">
+  	select
+  	<include refid="Base_Column_List" />
+  	from t_admin_menu
+  </select>
+  
+  <select id="listAuthMenu" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  	select
+	  distinct m.menu_id, m.menu_name, m.menu_url, m.menu_icon, m.`type`, m.permit_identifier, m.parent_id, m.order_num, m.create_time
+    from t_admin_menu m
+    join t_admin_role_menu rm on m.menu_id=rm.menu_id
+    join t_admin_role r on rm.role_id=r.role_id
+    join t_admin_user_role ur on r.role_id=ur.role_id
+    join t_admin_user u on ur.user_id=u.user_id
+    where u.`status`='enable' and m.`type` in(0,1,2) and u.user_id=#{userId,jdbcType=INTEGER}
+  </select>
+</mapper>

@@ -1,0 +1,24 @@
+package com.huachu.core.service;
+
+import com.github.pagehelper.Page;
+import com.huachu.core.dao.TStaffMapper;
+import com.huachu.dto.request.query.QueryStaffReqDTO;
+import com.huachu.dto.response.StaffRespDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ *
+ * @author zephyr
+ * @date 2018/12/31
+ */
+@Service
+public class StaffService {
+
+    @Autowired
+    TStaffMapper staffMapper;
+
+    public Page<StaffRespDTO> queryList(QueryStaffReqDTO reqDto) {
+        return staffMapper.queryList(reqDto);
+    }
+}

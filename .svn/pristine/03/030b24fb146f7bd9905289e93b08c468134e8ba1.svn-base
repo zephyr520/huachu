@@ -1,0 +1,88 @@
+package com.huachu.core.queue;
+
+import com.huachu.common.dto.RecyclingListDTO;
+import com.huachu.common.excel.ParserExcel;
+import com.huachu.common.util.StringUtils;
+import com.huachu.core.service.RecyclingListService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.math.BigDecimal;
+import java.util.concurrent.CountDownLatch;
+
+/**
+ * Created by zephyr on 2019/1/12.
+ */
+public class RecyclingListTask implements Runnable {
+
+    private static final Logger logger = LoggerFactory.getLogger(RecyclingListTask.class);
+    /**
+     * 队列大小
+     */
+    public static final int QUEUE_MAX_SIZE = 5000;
+    /**
+     * 线程数
+     */
+    public static final int CORE_POOL_SIZE = 5;
+
+    private CountDownLatch downLatch;
+    private RecyclingListService recyclingListService;
+    private ParserExcel parserExcel;
+    private int start;
+    private int end;
+
+    public RecyclingListTask(CountDownLatch downLatch, RecyclingListService recyclingListService, ParserExcel parserExcel, int start, int end) {
+        this.downLatch = downLatch;
+        this.recyclingListService = recyclingListService;
+        this.parserExcel = parserExcel;
+        this.start = start;
+        this.end = end;
+    }
+
+    @Override
+    public void run() {
+        RecyclingListDTO dto = null;
+        try {
+            logger.info(Thread.currentThread().getName() + "的开始数量：" + start + "，最终数量：" + end);
+            for (int i = start; i < end; i++) {
+                if (parserExcel.getRow(i) == null) {
+                    continue;
+                }
+                String[] rows = parserExcel.readExcelLine(i);
+                dto = new RecyclingListDTO();
+                // 三级机构
+                dto.setOrganization(rows[0]);
+                // 报案号
+                dto.setFileNo(rows[2]);
+                // 车牌号
+                dto.setPlateNo(rows[3]);
+                // 配件名称
+                dto.setAccessoryName(rows[5]);
+                // 是否是重点配件
+                if (StringUtils.isNotEmpty(rows[6]) && "重点配件".equals(rows[6])) {
+                    dto.setIfImportant(Boolean.TRUE);
+                }
+                // 配件价格
+                String accessoryPrice = rows[7];
+                if (StringUtils.isNotEmpty(accessoryPrice) && StringUtils.isNumericDigit(accessoryPrice)) {
+                    dto.setAccessoryPrice(new BigDecimal(accessoryPrice));
+                } else {
+                    dto.setAccessoryPrice(BigDecimal.ZERO);
+                }
+                // 配件数量
+                dto.setAccessoryNum(1);
+                // 修理厂名称
+                dto.setRepairShopName(rows[8]);
+                // 车型
+                dto.setCarModel(rows[11]);
+
+                recyclingListService.createRecyclingList(dto);
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            downLatch.countDown();
+        }
+    }
+}
