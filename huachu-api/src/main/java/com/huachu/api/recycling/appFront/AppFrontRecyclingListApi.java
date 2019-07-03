@@ -11,5 +11,5 @@ import io.swagger.annotations.Api;
 @RestController
 @RequestMapping("/app/recycling")
 public class AppFrontRecyclingListApi extends AbstractApi {
-
+	
 }

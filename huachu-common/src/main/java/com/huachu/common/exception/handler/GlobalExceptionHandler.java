@@ -35,68 +35,68 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public ApiResult handleExceptions(HttpServletRequest request, Exception ex) {
+    public ApiResult<Void> handleExceptions(HttpServletRequest request, Exception ex) {
         String simpleName = ex.getClass().getSimpleName();
         if ("ClientAbortException".equals(simpleName)) {
             log.debug(getRequestString(request)+ex.getMessage());
         } else {
             log.error(getRequestString(request),ex);
         }
-        return new ApiResult(ApiResultCode.SERVICE_ERROR);
+        return new ApiResult<>(ApiResultCode.SERVICE_ERROR);
     }
 
     @ExceptionHandler (BOException.class)
     @ResponseStatus (HttpStatus.OK)
     @ResponseBody
-    public ApiResult handleBusinessExceptions(HttpServletRequest request,BOException ex) {
+    public ApiResult<Void> handleBusinessExceptions(HttpServletRequest request,BOException ex) {
         log.info(getRequestString(request)+ex.getMessage());
         if(ex.getMsg()!=null) {
-            return new ApiResult(ex.getCode(),ex.getMsg());
+            return new ApiResult<>(ex.getCode(),ex.getMsg());
         }
-        return new ApiResult(ex.getCode(), ex.getMsg());
+        return new ApiResult<>(ex.getCode(), ex.getMsg());
     }
 
 
     @ExceptionHandler (MissingServletRequestParameterException.class)
     @ResponseStatus (HttpStatus.OK)
     @ResponseBody
-    public ApiResult handleMissingServletRequestParameterException(HttpServletRequest request,MissingServletRequestParameterException ex){
+    public ApiResult<Void> handleMissingServletRequestParameterException(HttpServletRequest request,MissingServletRequestParameterException ex){
         log.error(getRequestString(request)+ex.getMessage());
-        return new ApiResult(ApiResultCode.PARAM_ERROR.getCode(),"参数 '"+ex.getParameterName()+"'不能为空");
+        return new ApiResult<>(ApiResultCode.PARAM_ERROR.getCode(),"参数 '"+ex.getParameterName()+"'不能为空");
     }
 
 
     @ExceptionHandler (HttpMediaTypeNotSupportedException.class)
     @ResponseStatus (HttpStatus.OK)
     @ResponseBody
-    public ApiResult handleHttpMediaTypeNotSupportedException(HttpServletRequest request,HttpMediaTypeNotSupportedException ex){
+    public ApiResult<Void> handleHttpMediaTypeNotSupportedException(HttpServletRequest request,HttpMediaTypeNotSupportedException ex){
         log.error(getRequestString(request)+ex.getMessage());
-        return new ApiResult(ApiResultCode.PARAM_ERROR.getCode(),"不支持的contentType '"+ex.getContentType()+"'");
+        return new ApiResult<>(ApiResultCode.PARAM_ERROR.getCode(),"不支持的contentType '"+ex.getContentType()+"'");
     }
 
     @ExceptionHandler (MethodArgumentNotValidException.class)
     @ResponseStatus (HttpStatus.OK)
     @ResponseBody
-    public ApiResult handleMethodArgumentNotValidException(HttpServletRequest request,MethodArgumentNotValidException ex){
+    public ApiResult<Void> handleMethodArgumentNotValidException(HttpServletRequest request,MethodArgumentNotValidException ex){
         log.error(getRequestString(request),ex);
         List<ObjectError> errors= ex.getBindingResult().getAllErrors();
-        return new ApiResult(ApiResultCode.PARAM_ERROR.getCode(),errors.get(0).getDefaultMessage());
+        return new ApiResult<>(ApiResultCode.PARAM_ERROR.getCode(),errors.get(0).getDefaultMessage());
     }
 
     @ExceptionHandler (ResourceAccessException.class)
     @ResponseStatus (HttpStatus.OK)
     @ResponseBody
-    public ApiResult handleResourceAccessException(HttpServletRequest request,ResourceAccessException ex){
+    public ApiResult<Void> handleResourceAccessException(HttpServletRequest request,ResourceAccessException ex){
         log.error(getRequestString(request),ex);
-        return new ApiResult(ApiResultCode.SERVICE_ERROR.getCode(),"服务器内部超时");
+        return new ApiResult<>(ApiResultCode.SERVICE_ERROR.getCode(),"服务器内部超时");
     }
 
     @ExceptionHandler (TypeMismatchException.class)
     @ResponseStatus (HttpStatus.OK)
     @ResponseBody
-    public ApiResult handleTypeMismatchException(HttpServletRequest request,TypeMismatchException ex){
+    public ApiResult<Void> handleTypeMismatchException(HttpServletRequest request,TypeMismatchException ex){
         log.error(getRequestString(request),ex);
-        return new ApiResult(ApiResultCode.PARAM_ERROR.getCode(),"参数'"+ex.getValue()+"'类型错误");
+        return new ApiResult<>(ApiResultCode.PARAM_ERROR.getCode(),"参数'"+ex.getValue()+"'类型错误");
     }
 
     private static String getRequestString(HttpServletRequest request){

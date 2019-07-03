@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.huachu.test.RedisServiceTest" time="1.196" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
+    <property name="java.vm.version" value="25.131-b11"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="H:\eclipse-workspace\huachu\huachu-api"/>
+    <property name="java.runtime.version" value="1.8.0_131-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_131\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="H:\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5706478090507630194.tmp"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_131\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_131/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_131/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_131/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jdk1.8.0_131\lib\rt.jar;G:\oracle\product\10.2.0\client_3\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\WebDataMiner Enterprise Trial;E:\php;E:\php\ext;D:\wamp\php;D:\wamp\php\ex;E:\apache-maven-3.2.5-bin\apache-maven-3.2.5\bin;C:\Program Files\TortoiseSVN\bin;H:\pjb\spring-boot-cli-1.5.1.RELEASE-bin\spring-1.5.1.RELEASE\bin;D:\nodejs\;D:\mysql-8.0.11-winx64\bin;C:\Program Files (x86)\MacType;E:\sonarqube-6.4/bin;D:\Program Files\Git\cmd;E:\flutter\bin;C:\Program Files\Microsoft VS Code\bin;E:\Sdk\platform-tools;E:\Sdk\tools;E:\gradle-4.10.3\bin;D:\Program Files\Groovy\Groovy-2.5.6\bin;C:\Program Files\VisualSVN Server\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;H:\eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\Administrator"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Administrator"/>
+    <property name="java.class.path" value="H:\apache-maven-3.0.5\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_131\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -gs H:\apache-maven-3.0.5\conf\settings.xml -s H:\apache-maven-3.0.5\conf\settings.xml install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_131"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_131\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_131\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="H:\apache-maven-3.0.5"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="test" classname="com.huachu.test.RedisServiceTest" time="1.196">
+    <error message="Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool" type="org.springframework.data.redis.RedisConnectionFailureException">org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at redis.clients.jedis.Connection.connect(Connection.java:184)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:93)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1767)
+	at redis.clients.jedis.JedisFactory.makeObject(JedisFactory.java:106)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:888)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:361)
+	at redis.clients.util.Pool.getResource(Pool.java:49)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:226)
+	at redis.clients.jedis.JedisPool.getResource(JedisPool.java:16)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.fetchJedisConnector(JedisConnectionFactory.java:194)
+	at org.springframework.data.redis.connection.jedis.JedisConnectionFactory.getConnection(JedisConnectionFactory.java:348)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:129)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:92)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:79)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:194)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:169)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:91)
+	at org.springframework.data.redis.core.DefaultValueOperations.setBit(DefaultValueOperations.java:252)
+	at com.huachu.common.service.RedisService.setbit(RedisService.java:146)
+	at com.huachu.test.RedisServiceTest.test(RedisServiceTest.java:19)
+</error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.9.RELEASE)
+
+2019-06-18 17:17:16.403  INFO 21008 --- [           main] c.h.t.RedisServiceTest                   : Starting RedisServiceTest on PC143 with PID 21008 (started by Administrator in H:\eclipse-workspace\huachu\huachu-api)
+2019-06-18 17:17:16.409  INFO 21008 --- [           main] c.h.t.RedisServiceTest                   : No active profile set, falling back to default profiles: default
+2019-06-18 17:17:16.490  INFO 21008 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1e81f160: startup date [Tue Jun 18 17:17:16 CST 2019]; root of context hierarchy
+2019-06-18 17:17:18.922  INFO 21008 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'redisTemplate' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=redisCacheConfig; factoryMethodName=redisTemplate; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/huachu/common/config/redis/RedisCacheConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=redisConfig; factoryMethodName=redisTemplate; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/huachu/common/config/redis/RedisConfig.class]]
+2019-06-18 17:17:19.229  INFO 21008 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-06-18 17:17:20.872  INFO 21008 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9d1fc27f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+2019-06-18 17:17:25.440  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accessory/image/upload],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.String> com.huachu.api.file.RecyclingAccessoryFileApi.uploadFile(org.springframework.web.multipart.MultipartFile) throws java.lang.Exception
+2019-06-18 17:17:25.443  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accessory/image/delete],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.file.RecyclingAccessoryFileApi.deleteFile(java.lang.String)
+2019-06-18 17:17:25.444  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accessory/file/create],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.file.RecyclingAccessoryFileApi.createAccessoryFile(com.huachu.dto.request.RecyclingAccessoryFileReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.452  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/menu/{roleId}/auth/list],methods=[GET]}" onto public com.huachu.common.web.ApiResult<java.util.List<java.lang.Integer>> com.huachu.api.menu.AdminMenuApi.authMenuIds(java.lang.Integer)
+2019-06-18 17:17:25.453  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/menu/auth/list],methods=[GET]}" onto public com.huachu.common.web.ApiResult<java.util.List<com.huachu.dto.AdminMenuDTO>> com.huachu.api.menu.AdminMenuApi.treeMenu()
+2019-06-18 17:17:25.455  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/menu/all/list],methods=[GET]}" onto public com.huachu.common.web.ApiResult<java.util.List<com.huachu.dto.AdminMenuDTO>> com.huachu.api.menu.AdminMenuApi.listAllMenu()
+2019-06-18 17:17:25.459  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/app/accessory/{id}/has/recycled],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.appFront.AppFrontRecyclingAccessoryApi.accessoryHasRecycled(java.lang.Long)
+2019-06-18 17:17:25.460  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/app/accessory/{id}/cancel/recycled],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.appFront.AppFrontRecyclingAccessoryApi.accessoryCancelRecycled(java.lang.Long)
+2019-06-18 17:17:25.473  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/accessory/list],methods=[POST]}" onto public com.huachu.common.web.ApiResult<com.github.pagehelper.PageInfo<com.huachu.dto.response.RecyclingAccessoryRespDTO>> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.queryList(com.huachu.dto.request.query.QueryRecyclingAccessoryReqDTO)
+2019-06-18 17:17:25.474  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/accessory/{id}/delete],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryDelete(java.lang.Long)
+2019-06-18 17:17:25.475  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/accessory/modify],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryModify(com.huachu.dto.request.RecyclingAccessoryReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.477  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/accessory/{id}/has/recycled],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryHasRecycled(java.lang.Long)
+2019-06-18 17:17:25.478  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/accessory/{id}/cancel/recycled],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryCancelRecycled(java.lang.Long)
+2019-06-18 17:17:25.480  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/accessory/failure],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryRecyclingFailure(com.huachu.dto.request.AccessoryIfRecyclingFailedReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.481  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/accessory/take/photo],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryTakePhoto(com.huachu.dto.request.RecyclingAccessoryIfTakePhotoReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.482  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/accessory/{id}/has/storage],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryHasStorage(java.lang.Long)
+2019-06-18 17:17:25.483  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/accessory/{id}/cancel/storage],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingAccessoryApi.accessoryCancelStorage(java.lang.Long)
+2019-06-18 17:17:25.492  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/list/page],methods=[POST]}" onto public com.huachu.common.web.ApiResult<com.github.pagehelper.PageInfo<com.huachu.dto.response.RecyclingListRespDTO>> com.huachu.api.recycling.back.BackRecyclingListApi.queryList(com.huachu.dto.request.query.QueryRecyclingListReqDTO)
+2019-06-18 17:17:25.493  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/list/import],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingListApi.recyclingListImport(org.springframework.web.multipart.MultipartFile)
+2019-06-18 17:17:25.494  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/list/dispatch],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingListApi.dispatchRecyclingList(com.huachu.dto.request.RecyclingListDispatchReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.495  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/list/{recyclingNo}/delete],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingListApi.deleteRecyclingList(java.lang.String)
+2019-06-18 17:17:25.496  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/list/create],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.recycling.back.BackRecyclingListApi.createRecyclingList(com.huachu.dto.request.RecyclingListReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.499  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/recycling/{recyclingNo}/dispatch/list],methods=[GET]}" onto public com.huachu.common.web.ApiResult<java.util.List<com.huachu.dto.response.RecyclingListDispatchRespDTO>> com.huachu.api.recycling.back.BackRecyclingListDispatchApi.queryListByRecyclingNo(java.lang.String)
+2019-06-18 17:17:25.506  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/repair/shop/{id}/delete],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.repairshop.RepairShopApi.delete(java.lang.Integer)
+2019-06-18 17:17:25.507  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/repair/shop/create],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.repairshop.RepairShopApi.create(com.huachu.dto.request.RepairShopReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.509  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/repair/shop/modify],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.repairshop.RepairShopApi.modify(com.huachu.dto.request.RepairShopReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.510  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/repair/shop/list],methods=[POST]}" onto public com.huachu.common.web.ApiResult<com.github.pagehelper.PageInfo<com.huachu.dto.response.RepairShopRespDTO>> com.huachu.api.repairshop.RepairShopApi.queryList(com.huachu.dto.request.query.QueryRepairShopReqDTO)
+2019-06-18 17:17:25.515  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/role/list],methods=[POST]}" onto public com.huachu.common.web.ApiResult<com.github.pagehelper.PageInfo<com.huachu.dto.response.AdminRoleRespDTO>> com.huachu.api.role.AdminRoleApi.queryList(com.huachu.dto.request.query.QueryAdminRoleReqDTO)
+2019-06-18 17:17:25.516  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/role/all/list],methods=[GET]}" onto public com.huachu.common.web.ApiResult<java.util.List<com.huachu.domain.TAdminRole>> com.huachu.api.role.AdminRoleApi.listAllRoles()
+2019-06-18 17:17:25.521  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/role/{roleId}/delete],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.role.AdminRoleApi.deleteRole(java.lang.Integer)
+2019-06-18 17:17:25.522  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/role/auth/menu],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.role.AdminRoleApi.roleAuthMenu(com.huachu.dto.request.RoleMenuIdsReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.528  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/staff/list],methods=[POST]}" onto public com.huachu.common.web.ApiResult<com.github.pagehelper.PageInfo<com.huachu.dto.response.StaffRespDTO>> com.huachu.api.staff.StaffApi.queryList(com.huachu.dto.request.query.QueryStaffReqDTO)
+2019-06-18 17:17:25.529  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/staff/create],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.staff.StaffApi.createStaff(com.huachu.dto.request.StaffReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.530  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/staff/modify],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.staff.StaffApi.modifyStaff(com.huachu.dto.request.StaffReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.534  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/user/list],methods=[POST]}" onto public com.huachu.common.web.ApiResult<com.github.pagehelper.PageInfo<com.huachu.dto.response.AdminUserRespDTO>> com.huachu.api.user.AdminUserApi.queryList(com.huachu.dto.request.query.QueryAdminUserReqDTO)
+2019-06-18 17:17:25.535  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/user/create],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.user.AdminUserApi.createUser(com.huachu.dto.request.AdminUserReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.536  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/user/modify],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.user.AdminUserApi.modifyUser(com.huachu.dto.request.AdminUserReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.536  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/user/{userId}/delete],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.user.AdminUserApi.deleteUser(java.lang.Integer)
+2019-06-18 17:17:25.537  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/user/recycling/list],methods=[GET]}" onto public com.huachu.common.web.ApiResult<java.util.List<com.huachu.dto.response.RecyclingUserRespDTO>> com.huachu.api.user.AdminUserApi.queryRecyclingUserList()
+2019-06-18 17:17:25.540  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/info],methods=[GET]}" onto public com.huachu.common.web.ApiResult<com.huachu.common.dto.AuthUserDTO> com.huachu.api.user.LoginApi.userInfo()
+2019-06-18 17:17:25.540  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public com.huachu.common.web.ApiResult<com.huachu.dto.response.LoginRespDTO> com.huachu.api.user.LoginApi.login(com.huachu.dto.request.LoginReqDTO,org.springframework.validation.BindingResult)
+2019-06-18 17:17:25.542  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[POST]}" onto public com.huachu.common.web.ApiResult<java.lang.Boolean> com.huachu.api.user.LoginApi.logout(javax.servlet.http.HttpServletResponse)
+2019-06-18 17:17:25.545  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2019-06-18 17:17:25.550  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2019-06-18 17:17:25.551  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2019-06-18 17:17:25.552  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2019-06-18 17:17:25.563  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-06-18 17:17:25.564  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-06-18 17:17:27.007  INFO 21008 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1e81f160: startup date [Tue Jun 18 17:17:16 CST 2019]; root of context hierarchy
+2019-06-18 17:17:27.171  INFO 21008 --- [           main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/js/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:17:27.171  INFO 21008 --- [           main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/swagger-ui.html] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:17:27.171  INFO 21008 --- [           main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:17:27.172  INFO 21008 --- [           main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:17:27.215  INFO 21008 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandler
+2019-06-18 17:17:27.281  INFO 21008 --- [           main] o.s.w.s.h.SimpleUrlHandlerMapping        : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-06-18 17:17:28.043  INFO 21008 --- [           main] o.s.c.s.DefaultLifecycleProcessor        : Starting beans in phase 2147483647
+2019-06-18 17:17:28.043  INFO 21008 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-06-18 17:17:28.094  INFO 21008 --- [           main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-06-18 17:17:28.127  INFO 21008 --- [           main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-06-18 17:17:28.789  INFO 21008 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryListUsingPOST_1
+2019-06-18 17:17:28.856  INFO 21008 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: accessoryCancelRecycledUsingPOST_1
+2019-06-18 17:17:28.913  INFO 21008 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: accessoryHasRecycledUsingPOST_1
+2019-06-18 17:17:29.058  INFO 21008 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryListUsingPOST_2
+2019-06-18 17:17:29.172  INFO 21008 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryListUsingPOST_3
+2019-06-18 17:17:29.379  INFO 21008 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryListUsingPOST_4
+2019-06-18 17:17:29.446  INFO 21008 --- [           main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: queryListUsingPOST_5
+2019-06-18 17:17:29.505  INFO 21008 --- [           main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2019-06-18 17:17:29.540  INFO 21008 --- [           main] c.h.t.RedisServiceTest                   : Started RedisServiceTest in 13.86 seconds (JVM running for 15.377)
+]]></system-out>
+  </testcase>
+</testsuite>

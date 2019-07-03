@@ -56,6 +56,23 @@ public class MD5Util {
         return resultString;
     }
     
+    /**
+     * MD5方法
+     * 
+     * @param text 明文
+     * @param key 密钥
+     * @return 密文
+     * @throws Exception
+     */
+	public static String md5(String text, String key) throws Exception {
+		byte[] bytes = (text + key).getBytes();
+		MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+		messageDigest.update(bytes);
+		bytes = messageDigest.digest();
+		
+		return byteArrayToHexString(bytes);
+	}
+    
 //    public static void main(String[] args) {
 //		System.out.println(MD5Encode("123456"));
 //		int num = 8000;

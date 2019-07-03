@@ -1,14 +1,18 @@
 package com.huachu.common.service;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
+import java.util.Collection;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
-import java.util.concurrent.TimeUnit;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
  *
@@ -137,4 +141,23 @@ public class RedisService {
     public void convertAndSend(String channel, String message) {
         stringRedisTemplate.convertAndSend(channel, message);
     }
+    
+    public void setbit(String key,long userId) {
+		stringRedisTemplate.opsForValue().setBit(key, userId, true);
+	}
+    
+    /**
+	 * 统计bit位为1的总数
+	 * @param key
+	 */
+	public Long bitCount(final String key) {
+		return redisTemplate.execute(new RedisCallback<Long>() {
+			@Override
+			public Long doInRedis(RedisConnection connection) throws DataAccessException {
+				long result = 0;
+				result = connection.bitCount(key.getBytes());
+				return result;
+			}
+		});
+	}
 }

@@ -379,5 +379,6 @@
   <update id="accessoryDispatchRecycling" parameterType="java.lang.String">
   	update t_recycling_accessory set accessory_recycling_user_id=0 
   	where accessory_status=0 and recycling_no=#{recyclingNo,jdbcType=VARCHAR}
+  	and accessory_recycling_user_id &gt; 0
   </update>
 </mapper>

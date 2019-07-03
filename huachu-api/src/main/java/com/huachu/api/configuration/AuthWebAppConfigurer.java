@@ -26,6 +26,7 @@ public class AuthWebAppConfigurer extends WebMvcConfigurerAdapter {
 		registry.addInterceptor(authInterceptor()).addPathPatterns("/**")
 				.excludePathPatterns("/login")
                 .excludePathPatterns("/logout")
+                .excludePathPatterns("/testMQ")
 		        .excludePathPatterns("/swagger-resources/**","/v2/**","/swagger-ui.html/**","/webjars/**");
         super.addInterceptors(registry);
     }
@@ -42,7 +43,7 @@ public class AuthWebAppConfigurer extends WebMvcConfigurerAdapter {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
-			.allowedOrigins("http://localhost:8080","http://back.zepone.com")
+			.allowedOrigins("http://localhost:8080","http://back.zepone.com", "http://47.104.20.112")
 			.allowedMethods("*")
 			.allowedHeaders("Origin, X-Requested-With, Content-Type, Accept, x-auth-token")
 			.allowCredentials(true);
